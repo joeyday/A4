@@ -1,0 +1,372 @@
+/* League Gothic Regular */
+@font-face {
+    font-family: LeagueGothic;
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/League_Gothic-webfont.eot');
+    src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/League_Gothic-webfont.woff') format('woff'),
+         url('fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    }
+
+/* Gentium Plus Regular */
+@font-face {
+    font-family: Gentium;
+    font-weight: normal;
+    font-style: normal;
+    src: url(fonts/GentiumPlus-R.woff);
+    src: url(fonts/GentiumPlus-R.ttf) format('truetype');
+    }
+
+/* Gentium Plus Italic */
+@font-face {
+    font-family: Gentium;
+    font-weight: normal;
+    font-style: italic;
+    src: url(fonts/GentiumPlus-I.woff);
+    src: url(fonts/GentiumPlus-I.ttf) format('truetype');
+    }
+
+/* Gentium Basic Bold */
+@font-face {
+    font-family: Gentium;
+    font-weight: bold;
+    font-style: normal;
+    src: url(fonts/GenBasB-webfont.woff);
+    src: url(fonts/GenBasB-webfont.ttf) format('truetype');
+    }
+
+/* Gentium Basic Bold Italic */
+@font-face {
+    font-family: Gentium;
+    font-weight: bold;
+    font-style: italic;
+    src: url(fonts/GenBasBI-webfont.woff);
+    src: url(fonts/GenBasBI-webfont.ttf) format('truetype');
+    }
+
+html {
+    background: #666 url('images/background3-flipped.png') no-repeat center top fixed;
+    background-size: cover;
+    }
+
+body {
+    margin-right: 18%;
+    margin-left: 1.8em;
+    -webkit-text-size-adjust: 100%;
+    }
+
+div.wrapper {
+    font-family: Gentium, Georgia, serif;
+    margin: 1.8em auto;
+    width: 32em;
+    font-size: 18px;
+    padding: 4em;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 0 6px 3px #333;
+    border-radius: 15px;
+    }
+    
+h1, h2, h3, h4, h5, h6 {
+    color: #555;
+    text-transform: uppercase;
+    font-family: LeagueGothic, Impact, sans-serif;
+    font-weight: normal;
+    }
+
+h1 {
+    color: #39f;
+    margin-top: 0;
+    margin-bottom: 1.2em;
+    font-size: 250%;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    }
+    
+body div#subtitle,
+body p#subtitle,
+body div#byline,
+body p#byline {
+    font-size: 140%;
+    text-align: center;
+    font-style: italic;
+    color: #444;
+    position: relative;
+    top: -2.142em;
+    margin: 0 0 -0.714em;
+    text-indent: 0;
+    }
+    
+h2 {
+    font-size: 180%;
+    margin: 1.111em 0 0.555em;
+    border-bottom: 1px solid #bbb;
+    }
+    
+h3 {
+    font-size: 150%;
+    margin: 1.333em 0 0.666em;
+    }
+    
+h4, h5, h6 {
+    font-size: 120%;
+    margin: 1.677em 0 0.833em;
+    }
+
+span.editsection {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 14px;
+    text-transform: none;
+    float: right;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    font-weight: normal;
+    }
+    
+span#dateline,
+span.dateline {
+    font-family: LeagueGothic, Impact, sans-serif;
+    text-transform: uppercase;
+    }
+
+a {
+    color: #06c;
+    text-decoration: none;
+    }
+    
+a:hover {
+    text-decoration: underline;
+    }
+    
+body p, body blockquote {
+    text-align: justify;
+    margin: 1em 0;
+    text-indent: 2em;
+    }
+    
+body p.no-indent,
+body blockquote.no-indent {
+    text-indent: 0;
+    }
+    
+body blockquote {
+    padding-left: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-left: 1px solid #06c;
+    }
+    
+body blockquote h2,
+body blockquote h3,
+body blockquote h4,
+body blockquote h5,
+body blockquote h6 {
+    text-indent: 0;
+    }
+    
+body h1 a,
+body h2 a,
+body h3 a,
+body h4 a,
+body h5 a,
+body h6 a,
+dt a {
+    color: #28e;
+    }
+
+dt {
+    font-family: LeagueGothic, helvetica, arial, sans-serif;
+    font-weight: normal;
+    font-size: 120%;
+    text-transform: uppercase;
+    color: #555;
+    }
+    
+small, abbr {
+    font-size: 88.88%;
+    color: #222;
+    }
+    
+abbr[title] {
+    cursor: help;
+    }
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+dt small,
+span.mini {
+    font-size: 75%;
+    font-family: Gentium, georgia, sans-serif;
+    font-style: italic;
+    text-transform: none;
+    top: -0.15em;
+    position: relative;
+    color: #444;
+    }
+
+ol, ul {
+    padding-left: 2em;
+    }
+
+ol {
+    list-style-type: decimal;
+    }
+    
+ol ol {
+    list-style-type: lower-alpha;
+    }
+    
+ol ol ol {
+    list-style-type: lower-roman;
+    }
+
+tt, code, pre {
+    font-family: droid sans mono, courier new, monospace;
+    font-size: 83.333%;
+    text-transform: none !important;
+    }
+    
+pre {
+    margin: 1.2em 2.4em;
+    padding: 1.2em;
+    border: 1px dashed #06c;
+    background: #f0f6fc;
+    }
+
+textarea {
+    width: 100%;
+    }
+    
+span.tocnumber:after {
+    content: ".";
+    }
+    
+body img,
+div.thumbinner {
+    max-width: 100% !important;
+    }
+    
+body img {
+    height: auto !important;
+    }
+        
+div.thumbcaption {
+    font-style: italic;
+    font-size: 75%;
+    }
+    
+div.center {
+    max-width: 80%;
+    margin: 0.5em auto;
+    text-align: center;
+    }
+    
+div.center img {
+    padding: 2px;
+    border: 1px solid #bbb;
+    background: #fff;
+    }
+    
+div.bibliography p {
+    text-indent: -2em;
+    margin-left: 2em;
+    }
+    
+sup.reference {
+    font-size: 66.666%;
+    vertical-align: baseline;
+    top: -0.4em;
+    position: relative;
+    margin-left: 0.175em;
+    margin-right: 0.175em;
+    }
+    
+div.ref-list,
+div.bibliography {
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-gap: 3em;
+	-moz-column-gap: 3em;
+	-webkit-column-gap: 3em;
+	font-size: 66.666%;
+	orphans: 10;
+	widows: 10;
+	text-align: justify;
+	}
+    
+div.printfooter {
+    visibily: hidden;
+    display: none;
+    }
+    
+    
+table.wikitable {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #ccc;
+    }
+    
+table.wikitable tr:nth-of-type(odd) {
+    background: #eee;
+    }
+    
+table.wikitable th {
+    font-size: 120%;
+    }
+    
+table.wikitable th, table.wikitable td {
+    /* border: 1px solid #ccc; */
+    width: 50%;
+    padding: 0.5em;
+    vertical-align: top;
+    }
+
+
+/* Styles for Special:SpecialPages */
+table.mw-specialpages-table td {
+    font-size: 0.857em; /* 14px·0.857=12px */
+    padding: 0;
+    }
+
+table.mw-specialpages-table td:first-of-type {
+    padding-right: 1em;
+    }
+    
+table.mw-specialpages-table td:last-of-type,
+table.mw-specialpages-table td:nth-of-type(2) {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    }
+
+table.mw-specialpages-table td li {
+    margin-left: 1.5em;
+    padding-left: 1em;
+    text-indent: -1em;
+    }
+
+h4.mw-specialpagesgroup {
+    border-bottom: 1px solid #ccc;
+    font-size: 1.285em;
+    margin: 1em 0 0em;
+    background: transparent;
+    }
+
+/* Custom page styles */
+body.page-The_end_for_which_God_created_the_world dt {
+    font-family: Gentium, Georgia, serif !important;
+    text-transform: none !important;
+    color: #000 !important;
+    font-size: 100% !important;
+    }

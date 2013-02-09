@@ -1,0 +1,27 @@
+html {
+    background: none !important;
+    }
+    
+body {
+    margin: auto !important;
+    }
+    
+div.wrapper {
+    font-size: 16px !important;
+    margin: auto !important;
+    padding: auto !important;
+    width: auto !important;
+    box-shadow: none !important;
+    }
+    
+span.editsection {
+    visibility: hidden !important;
+    display: none !important;
+    }
+    
+div.printfooter {
+    display: block !important;
+    visibility: visible !important;
+    font-style: italic !important;
+    font-size: 80% !important;
+    }
