@@ -37,7 +37,7 @@ class A4Template extends QuickTemplate {
 
 <head>
 <meta charset="<?php $this->text('charset') ?>" />
-<meta name="viewport" content="width=785,minimum-scale=1.0" />
+<meta name="viewport" content="width=device-width" />
 <?php $this->html('headlinks') ?>
 <title><?php $this->text('pagetitle') ?></title>
 <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css" />
@@ -54,16 +54,19 @@ class A4Template extends QuickTemplate {
 <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
 <script src="/jquery.js" type="text/javascript"></script>
 <script src="/Hyphenator.js" type="text/javascript"></script>
+<script src="/hanging-punctuation.js" type="text/javascript"></script>
 <script type="text/javascript">
     var hyphenatorSettings = {
         orphancontrol: 3,
         selectorfunction: function() {
-            return $('p,li,dt,blockquote,h1,h2,h3,h4,h5,h6').get();
+            return $('p,li,dt,blockquote').get();
         }
     };
     Hyphenator.config(hyphenatorSettings);
     Hyphenator.run();
 </script>
+<script type="text/javascript" src="//use.typekit.net/qwp6cjh.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <?php print Skin::makeGlobalVariablesScript($this->data); ?>
