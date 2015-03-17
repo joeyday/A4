@@ -19,20 +19,26 @@ div.wrapper {
     font-size: 22px;
     padding: 4em;
     background: #fbfaf5;
-    color: #111;
+    color: #000;
     box-shadow: 0 0 6px 3px #333;
     border-radius: 15px;
     }
     
+p, li, dt, dd, blockquote {
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    }
+    
 h1, h2, h3, h4, h5, h6 {
-    color: #333;
+    color: #000;
     text-transform: uppercase;
     font-family: "league-gothic", Impact, sans-serif;
     font-weight: normal;
     }
 
 h1 {
-    color: #000;
     margin-top: 0;
     margin-bottom: 1.2em;
     font-size: 300%;
@@ -41,18 +47,28 @@ h1 {
     border-bottom: 0.25rem solid #f64;
     }
     
-body div#subtitle,
-body p#subtitle,
-body div#byline,
-body p#byline {
+body #subtitle,
+body #byline {
     font-size: 140%;
     text-align: right;
     font-style: italic;
-    color: #222;
+    color: #000;
     position: relative;
     top: -2.142em;
     margin: 0 0 -0.714em;
     text-indent: 0;
+    }
+    
+#subtitle + #byline {
+    margin-top: 2em;
+    }
+    
+#byline img {
+    height: 1.25em !important;
+    width: auto !important;
+    border-radius: 50%;
+    vertical-align: top;
+    margin-left: 0.1em;
     }
     
 h2 {
@@ -99,8 +115,11 @@ a:hover {
     
 body p, body blockquote {
     text-align: justify;
-    margin: 1em 0;
     text-indent: 2em;
+    }
+
+body p {
+    margin: 0.4em 0;
     }
     
 body p.no-indent,
@@ -111,8 +130,7 @@ body blockquote.no-indent {
 body blockquote {
     padding-left: 1em;
     padding-right: 1em;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 1em 2em;
     border-left: 1px solid #f64;
     }
     
@@ -123,30 +141,35 @@ body blockquote h5,
 body blockquote h6 {
     text-indent: 0;
     }
-    
-body h1 a,
-body h2 a,
-body h3 a,
-body h4 a,
-body h5 a,
-body h6 a,
-dt a {
-    color: #28e;
-    }
 
 dt {
     font-family: "league-gothic", helvetica, arial, sans-serif;
     font-weight: normal;
     font-size: 120%;
     text-transform: uppercase;
-    color: #222;
-    }
-    
-small, abbr {
-    font-size: 88.88%;
     color: #000;
     }
     
+small, abbr {
+    font-size: 0.8em;
+    color: #000;
+    border: 0;
+    text-decoration: none;
+    font-weight: 500;
+    }
+
+@supports (font-feature-settings: 'smcp') or (-webkit-font-feature-settings: 'smcp') or (-moz-font-feature-settings: 'smcp') {
+    abbr {
+        font-feature-settings: 'smcp';
+        -webkit-font-feature-settings: 'smcp';
+        -moz-font-feature-settings: 'smcp';
+        text-transform: lowercase;
+        font-size: 1.1em;
+        color: #000;
+        font-weight: normal;
+        }
+    }
+
 abbr[title] {
     cursor: help;
     }
@@ -165,7 +188,7 @@ span.mini {
     text-transform: none;
     top: -0.15em;
     position: relative;
-    color: #111;
+    color: #000;
     }
 
 ol, ul {
@@ -194,11 +217,17 @@ pre {
     margin: 1.2em 2.4em;
     padding: 1.2em;
     border: 1px dashed #f64;
-    background: #f0f6fc;
+    background: rgba(255,103,69,0.05);
+    overflow: scroll;
     }
 
 mark {
-    background-color: #fffdb6; 
+    background: rgba(0,204,102,0.25);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 50%, rgba(0,204,102,0.2) 50%, rgba(0,204,102,0.2) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 50%, rgba(0,204,102,0.2) 50%, rgba(0,204,102,0.2) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 50%, rgba(0,204,102,0.2) 50%, rgba(0,204,102,0.2) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 50%, rgba(0,204,102,0.2) 50%, rgba(0,204,102,0.2) 100%);
+    background: linear-gradient(top, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.0) 50%, rgba(0,204,102,0.2) 50%, rgba(0,204,102,0.2) 100%);
     }
 
 textarea {
@@ -230,6 +259,22 @@ div.thumbcaption {
     font-size: 75%;
     }
     
+div.floatleft {
+    float: left;
+    margin-top: 1em;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+    max-width: 40%;
+    }
+    
+div.floatright {
+    float: right;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+    max-width: 40%;
+    }
+    
 div.center {
     max-width: 80%;
     margin: 0.5em auto;
@@ -239,7 +284,14 @@ div.center {
 div.center img {
     padding: 2px;
     border: 1px solid #bbb;
-    background: #fff;
+    background: #fbfaf5;
+    }
+    
+hr {
+    width: 33%;
+    margin: 2em auto;
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.25);;
     }
     
 div.bibliography p {
@@ -349,10 +401,113 @@ body.page-The_end_for_which_God_created_the_world dt {
     font-size: 100% !important;
     }
 
+#wpTextbox1,
+#wpSummary {
+    font-family: monospace;
+    font-size: 90%;
+    }
 
+div.editButtons {
+    text-align: center;
+    }
+    
+#wpSave,
+#wpPreview,
+#wpDiff {
+    border: 2px solid #aaa;
+    background: #fff;
+    font-family: Skolar, serif;
+    font-size: 100%;
+    padding: 0.25em 0.5em;
+    margin: 0.5em 0;
+    border-radius: 3em;
+    }
+    
+#wpSave:hover,
+#wpPreview:hover,
+#wpDiff:hover {
+    background: #616161;
+    color: #fff;
+    }
+    
+span.editHelp {
+    display: block;
+    }
 
+.endmark img {
+    border-radius: 50%;
+    height: 0.7em !important;
+    width: auto !important;
+    vertical-align: -0.0625em;
+    }
 
+.who-is-joey-day {
+    background: #fc674b;
+    color: #fff;
+    margin: 4em -4em -4em;
+    padding: 4em 4em 4em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    }
+    
+.who-is-joey-day-header {
+    color: #fff;
+    border-bottom-color: #fff !important;
+    text-transform: uppercase;
+    font-family: "league-gothic", Impact, sans-serif;
+    font-weight: normal;
+    font-size: 200%;
+    margin: 0 0 0.555em !important;
+    border-bottom: 1px solid #bbb;
+    text-indent: 0;
+    }
+    
+.who-is-joey-day-content {
+    text-indent: 0;
+    margin-left: 6.25em;
+    }
+    
+.who-is-joey-day abbr {
+    color: #fff;
+    }
+    
+.who-is-joey-day img {
+    float: left;
+    height: 5.25em !important;
+    width: auto !important;
+    border-radius: 50%;
+    vertical-align: top;
+    margin: 0 1em 0.5em -6.25em;
+    }
 
+.who-is-joey-day a {
+    color: #fff;
+    text-decoration: underline;
+    }
+
+.callout-left,
+.callout-right {
+    font-size: 125%;
+    width: 50%;
+    font-style: italic;
+    text-indent: 0;
+    text-align: center;
+    border-top: 1px solid #f64;
+    border-bottom: 1px solid #f64;
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+    padding: 0.5em 0.25em;
+    }
+.callout-left {
+    float: left;
+    margin-right: 1em;
+    margin-left: -1.5em;
+    }
+.callout-right {
+    float: right;
+    margin-left: 1em;
+    margin-right: -1.5em;
+    }
  
 
 /********** Media queries **********/
@@ -363,16 +518,43 @@ body.page-The_end_for_which_God_created_the_world dt {
         padding: 0;
     }
     body {
+        background: #fbfaf5;
         margin: 0;
         padding: 0;
     }
     div.wrapper {
         width: auto;
         margin: 0 auto;
-        padding: 0.75em;
+        padding: 1em;
         max-width: 32em;
         box-shadow: none;
         border-radius: 0;
+    }
+    .who-is-joey-day {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background: #fc674b;
+        color: #fff;
+        margin: 2em 0 -1.5em;
+        padding: 2em 0 2em;
+        border-radius: 0;
+    }
+    .who-is-joey-day-inner {
+        margin: 0 auto;
+        max-width: 32em;
+        padding: 0 1em;
+    }
+    .callout-left,
+    .callout-right {
+        font-size: 125%;
+        width: 45%;
+    }
+    .callout-left {
+        margin-left: 0;
+    }
+    .callout-right {
+        margin-right: 0;
     }
 }
 
@@ -386,11 +568,16 @@ body.page-The_end_for_which_God_created_the_world dt {
     div.wrapper {
         font-size: 16px;
         }
-    body blockquote {
+    body blockquote,
+    body pre {
         padding-left: 0.75em;
         padding-right: 0.75em;
         margin-left: 0.5em;
         margin-right: 0.5em;
+        }
+    body pre {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
         }
     div.ref-list,
     div.bibliography {
@@ -402,27 +589,27 @@ body.page-The_end_for_which_God_created_the_world dt {
         font-size: 250%;
         }
     
-    body div#subtitle,
-    body p#subtitle,
-    body div#byline,
-    body p#byline {
+    body #subtitle,
+    body #byline {
         font-size: 120%;
         }
-        
-    h2 {
+
+    h2,
+    .who-is-joey-day-header {
         font-size: 180%;
-        margin: 1.111em 0 0.555em;
-        border-bottom: 1px solid #bbb;
         }
         
     h3 {
         font-size: 120%;
-        margin: 1.333em 0 0.666em;
         }
         
     h4, h5, h6 {
         font-size: 100%;
-        margin: 1.677em 0 0.833em;
         }
+    .callout-left,
+    .callout-right {
+        display: none;
+        visibility: hidden;
+    }
 
 }

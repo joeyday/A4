@@ -39,7 +39,7 @@ class A4Template extends QuickTemplate {
 <meta charset="<?php $this->text('charset') ?>" />
 <meta name="viewport" content="width=device-width" />
 <?php $this->html('headlinks') ?>
-<title><?php $this->text('pagetitle') ?></title>
+<title><?php $this->data['displaytitle']!=""?$this->html('title'):$this->text('title') ?></title>
 <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css" />
 <style type="text/css" media="screen, print">
     @import "<?php $this->text('stylepath') ?>/<?php $this->text('stylename') ?>/main.css?<?php echo $GLOBALS['wgStyleVersion'] ?>";
@@ -53,18 +53,9 @@ class A4Template extends QuickTemplate {
 <script src="/bibly-hack.min.js"></script>
 <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
 <script src="/jquery.js" type="text/javascript"></script>
-<script src="/Hyphenator.js" type="text/javascript"></script>
-<script src="/hanging-punctuation.js" type="text/javascript"></script>
-<script type="text/javascript">
-    var hyphenatorSettings = {
-        orphancontrol: 3,
-        selectorfunction: function() {
-            return $('p,li,dt,blockquote').get();
-        }
-    };
-    Hyphenator.config(hyphenatorSettings);
-    Hyphenator.run();
-</script>
+<?php if ($GLOBALS['action'] == "view" || $GLOBALS['action'] == "purge") {
+    echo '<script src="/hanging-punctuation.js" type="text/javascript"></script>';
+} ?>
 <script type="text/javascript" src="//use.typekit.net/qwp6cjh.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
